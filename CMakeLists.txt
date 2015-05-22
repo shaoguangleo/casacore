@@ -5,6 +5,7 @@ project(casacore)
 
 cmake_minimum_required (VERSION 2.6.0)
 
+
 set(PROJECT_VERSION_MAJOR 2)
 set(PROJECT_VERSION_MINOR 0)
 set(PROJECT_VERSION_PATCH 1)
@@ -192,6 +193,8 @@ if (NOT ${MODULE} STREQUAL "casa")
     endif (NOT ${MODULE} STREQUAL "tables")
 endif (NOT ${MODULE} STREQUAL "casa")
 if (BUILD_PYTHON)
+    set(Python_FIND_VERSION "2.6")
+
     set (_modules ${_modules} python)
     find_package(Boost REQUIRED COMPONENTS python)
     find_package(Python REQUIRED)
