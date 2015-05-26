@@ -1,7 +1,7 @@
 #
 # casacore python bindings
 #
-include_directories (${Boost_INCLUDE_DIRS} ${NUMPY_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
+include_directories (${PYTHON2_Boost_INCLUDE_DIRS} ${PYTHON2_NUMPY_INCLUDE_DIRS} ${PYTHON2_INCLUDE_DIRS})
 
 add_library (casa_python
 Converters/PycArray.cc
@@ -13,7 +13,7 @@ Converters/PycRecord.cc
 Converters/PycValueHolder.cc
 )
 
-target_link_libraries (casa_python casa_casa ${Boost_PYTHON_LIBRARY_RELEASE} ${PYTHON_LIBRARIES})
+target_link_libraries (casa_python casa_casa ${PYTHON2_Boost_PYTHON_LIBRARY_RELEASE} ${PYTHON2_LIBRARIES})
 
 install (TARGETS casa_python
 RUNTIME DESTINATION bin
